@@ -1,0 +1,83 @@
+test:
+  name: share-request-agreement-contract-benchmark
+  description: A share request agreement contract benchmark test
+  workers:
+    type: local
+    number: 1
+  rounds:
+    - label: create-Share-Request-Agreement r1
+      description: create share request agreement
+      txNumber: 10
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 10
+          contractId: chaincode-share-access
+
+    - label: create-Share-Request-Agreement r2
+      description: create share request agreement
+      txNumber: 50
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 50
+          contractId: chaincode-share-access
+
+    - label: create-Share-Request-Agreement r3
+      description: create share request agreement
+      txNumber: 100
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 100
+          contractId: chaincode-share-access
+
+    - label: create-Share-Request-Agreement r4
+      description: create share request agreement
+      txNumber: 200
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 200
+          contractId: chaincode-share-access
+
+    - label: create-Share-Request-Agreement r4
+      description: create share request agreement
+      txNumber: 300
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 300
+          contractId: chaincode-share-access
+
+    - label: create-Share-Request-Agreement r4
+      description: create share request agreement
+      txNumber: 400
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 400
+          contractId: chaincode-share-access
+
+    - label: create-Share-Request-Agreement r4
+      description: create share request agreement
+      txNumber: 500
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/createSRATest.js
+        arguments:
+          assets: 500
+          contractId: chaincode-share-access

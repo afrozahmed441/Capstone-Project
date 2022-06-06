@@ -1,0 +1,83 @@
+test:
+  name: Register Doctor
+  description: A register Doctor contract benchmark test
+  workers:
+    type: local
+    number: 1
+  rounds:
+    - label: register Doctor r1
+      description: register Doctor
+      txNumber: 10
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 10
+          contractId: chaincode-share-access
+
+    - label: register Doctor r2
+      description: register Doctor
+      txNumber: 50
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 50
+          contractId: chaincode-share-access
+
+    - label: register Doctor r3
+      description: register Doctor
+      txNumber: 100
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 100
+          contractId: chaincode-share-access
+
+    - label: register Doctor r4
+      description: register Doctor
+      txNumber: 200
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 200
+          contractId: chaincode-share-access
+
+    - label: register Doctor r4
+      description: register Doctor
+      txNumber: 300
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 300
+          contractId: chaincode-share-access
+
+    - label: register Doctor r4
+      description: register Doctor
+      txNumber: 400
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 500 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 400
+          contractId: chaincode-share-access
+
+    - label: register Doctor r4
+      description: register Doctor
+      txNumber: 500
+      rateControl:
+        { type: "linear-rate", opts: { startingTps: 100, finishingTps: 600 } }
+      workload:
+        module: workload/registerDoctorTest.js
+        arguments:
+          assets: 500
+          contractId: chaincode-share-access
